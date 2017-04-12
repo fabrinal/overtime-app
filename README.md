@@ -7,7 +7,7 @@ Company needs documentation that salaried employees did or did not get overtime 
 ## Models
 
 - Post -> date:date rationale:text
-- User -> Devise
+x User -> Devise
 - AdminUser -> STI
 
 ## Features
