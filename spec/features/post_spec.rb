@@ -25,6 +25,15 @@ require 'rails_helper'
       end
     end
 
+    describe 'new' do
+      it 'can be created from nav' do
+        visit root_path
+
+        click_link "new_post_from_nav"
+        expect(page.status_code).to eq(200)
+      end
+    end
+      
     describe 'creation' do 
       before do
         visit new_post_path
@@ -50,6 +59,7 @@ require 'rails_helper'
         expect(User.last.posts.last.rationale).to eq("User Association")
       end
     end
+
 
     describe 'edit' do
       before do
