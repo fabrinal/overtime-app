@@ -33,6 +33,15 @@ require 'rails_helper'
         expect(page.status_code).to eq(200)
       end
     end
+
+    describe 'destroy' do
+      it 'can be deleted from index' do
+        post = FactoryGirl.create(:post)
+        visit posts_path
+        click_link "delete_post_#{post.id}_from_index"
+        expect(page.status_code).to eq(200)
+      end
+    end
       
     describe 'creation' do 
       before do
