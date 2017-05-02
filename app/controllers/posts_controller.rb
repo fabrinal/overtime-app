@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to @post
+      redirect_to @post, notice: 'post is created'
     else
       render 'new'
     end
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, notice: 'Post is deleted'
   end
   
 
