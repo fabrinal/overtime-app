@@ -13,7 +13,7 @@ FactoryGirl.define do
   end
   
   factory :admin_user, class: "AdminUser" do
-    email email { generate :email }
+    email { generate :email }
     password 'abcdef' 
     password_confirmation 'abcdef'
     first_name 'Admin' 
