@@ -6,8 +6,7 @@
         last_name: 'rinaldi')
 
 puts "add 1 user"
-
-@user = AdminUser.create(
+AdminUser.create(
         email: 'admin@hobedio.com', 
         password: 'testing1234', 
         password_confirmation: 'testing1234', 
