@@ -23,6 +23,16 @@ require 'rails_helper'
         visit posts_path
         expect(page).to have_content(/Rationale|Content/)
       end
+
+      it 'has a scope so that only post creators can see' do
+        post1 = Post.create(date: Date.today, rationale: 'Anything',user_id: @user.id)
+        post2 = Post.create(date: Date.today, rationale: 'Anything',user_id: @user.id)
+
+        other_user = User.create(first_name: 'test', last_name:'again',email: 'ypw@abc.com', password: 'asdfasdf',password_confirmation:'asdfasdf')
+        post_from_other_user = Post.create(date: Date.today, rationale: 'Should Not Exists',user_id: other_user.id)
+        visit posts_path
+        expect(page).to_not have_content(/Should Not Exists/)
+      end
     end
 
     describe 'new' do
@@ -37,6 +47,7 @@ require 'rails_helper'
     describe 'destroy' do
       it 'can be deleted from index' do
         post = FactoryGirl.create(:post)
+        post.update(user_id: @user.id)
         visit posts_path
         click_link "delete_post_#{post.id}_from_index"
         expect(page.status_code).to eq(200)
