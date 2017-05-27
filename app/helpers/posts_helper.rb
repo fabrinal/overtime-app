@@ -10,7 +10,7 @@ module PostsHelper
         content_tag(:span, status.titleize, class: 'label label-primary')
       when 'approved'
         content_tag(:span, status.titleize, class: 'label label-success')
-      when 'submitted'
+      when 'rejected'
         content_tag(:span, status.titleize, class: 'label label-danger')
       end
     end
