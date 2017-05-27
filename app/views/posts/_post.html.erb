@@ -12,7 +12,7 @@
       <%= post.overtime_request %>
     </td>
     <td>
-      <%= post.rationale %>
+      <%= link_to post.rationale, post_path(post) %>
     </td>
     <td>
       <%= status_label post.status.to_s %>
