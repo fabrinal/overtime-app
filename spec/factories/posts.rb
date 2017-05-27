@@ -3,6 +3,7 @@ FactoryGirl.define do
     date Date.today
     rationale "Some Rationale"
     user
+    overtime_request 2.5
   end
   
   factory :second_post, class: "Post" do

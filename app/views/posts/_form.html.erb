@@ -4,10 +4,15 @@
       <%= js add_gritter(message, :title => "Overtime App Notification!", :sticky => true) %>
     <% end %>
   <% end %>
+   <div class="form-group">
+    <%= f.label :overtime_request %>
+    <%= f.text_field :overtime_request, class: 'form-control' %>
+  </div>
   <div class="form-group">
     <%= f.label :date %>
     <%= f.date_field :date, class: 'form-control' %>
   </div>
+ 
   <div class="form-group">
     <%= f.label :rationale %>
     <%= f.text_area :rationale, class: 'form-control' %>
