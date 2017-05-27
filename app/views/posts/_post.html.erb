@@ -12,6 +12,9 @@
       <%= post.rationale %>
     </td>
     <td>
+      <%= status_label post.status.to_s %>
+    </td>
+    <td>
       <%= link_to "Edit", edit_post_path(post), id: "edit_#{post.id}" %>
     </td>
     <td>
