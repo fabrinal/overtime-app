@@ -14,7 +14,7 @@ AdminUser.create(
         last_name: 'rinaldi')
 
 100.times do |post|
-  Post.create(date: Date.today, rationale: "#{post} rationale", user_id: @user.id, overtime_request: 2.5)
+  Post.create(date: Date.today, rationale: "#{post} rationale content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt", user_id: @user.id, overtime_request: 2.5)
 end
 
 puts "create 100 sample"
