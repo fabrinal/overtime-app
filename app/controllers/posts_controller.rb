@@ -1,11 +1,17 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :approve]
   def index
     if current_user.type == 'AdminUser'
       @posts = Post.all.page(params[:page]).per(10)
     else
       @posts = Post.posts_by(current_user).page(params[:page]).per(10)
     end
+  end
+
+  def approve
+    authorize @post
+    @post.approved!
+    redirect_to root_path, notice: 'The post was has been approved'
   end
 
   def new
