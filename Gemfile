@@ -62,3 +62,4 @@ gem 'gritter'
 gem 'administrate', "~> 0.5.0"
 gem 'bourbon'
 gem 'pundit'
+gem 'kaminari'
