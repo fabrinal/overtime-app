@@ -21,3 +21,7 @@
 .pending-details {
 	font-weight: 900;
 }
+
+.homepage-block:hover{
+	background: #172b63;
+}
